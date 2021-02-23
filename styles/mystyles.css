@@ -7,6 +7,19 @@ body {
   flex-direction: column;
   margin: 0;
 }
+/*fonts*/
+@font-face{
+  font-family: 'Abril Fatface';
+  src: url(font/AbrilFatface-Regular.ttf);
+}
+@font-face{
+  font-family: 'Cormorant Garamond-Bold';
+  src: url(font/CormorantGaramond-Bold.ttf);
+}
+@font-face{
+  font-family: 'PassionSansPDac-Light';
+  src: url(font/PassionSansPDac-Light.ttf);
+}
 /*Alles in de header*/
 header{
   background: black;
