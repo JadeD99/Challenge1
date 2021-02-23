@@ -1,3 +1,9 @@
+
+Chart.defaults.global.defaultFontFamily = "PassionSansPDac-Light";
+Chart.defaults.global.defaultFontColor = "Black";
+Chart.defaults.global.defaultFontSize = 14; 
+
+
 // js voor de afteller
 
 var countDownDate = new Date("June 17, 2021 15:37:25").getTime();
@@ -28,7 +34,7 @@ var x = setInterval(function() {
   }
 }, 1000);
 
-
+// js voor de charts
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -63,7 +69,7 @@ var myChart = new Chart(ctx, {
 
 
 
-var ctx = document.getElementById('myChart2');
+var ctx = document.getElementById('myChart3');
 var myPieChart = new Chart(ctx, {
     type: 'pie',
     data: {
@@ -90,7 +96,7 @@ var myPieChart = new Chart(ctx, {
 });
 
 
-var ctx = document.getElementById('myChart3');
+var ctx = document.getElementById('myChart2');
 var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -98,19 +104,42 @@ var myLineChart = new Chart(ctx, {
         label: 'Tijd (maanden)',
         
         datasets: [{
-            label: '# Afstand afgelegd',
+            label: '# Afstand afgelegd in KM',
             data: [5, 15, 25, 35, 45, 55, 65,],
             backgroundColor: [
                 '#828FEF',
-               
             ],
-            
+            defaultFontSize:[ 20],
             borderWidth: 0
         }]
     },
     options: {
+
         
     }
 
 });
 
+// js voor de proces bar
+
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 40) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+ }
+  document.getElementById("button").onclick = function (){
+  move();
+ };
